@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add employee result</title>
+</head>
+<body>
+<h1>Add employee result</h1>
+<br>
+<span th:text="'Ид сотрудника: ' + ${employee.id}"/>
+<br>
+<span th:text="'Имя сотрудника: ' + ${employee.name}"/>
+<br>
+<span th:text="'Возраст сотрудника: ' + ${employee.age}"/>
+<br>
+
+<a th:href="@{/employees/show}">к списку сотрудников</a>
+<br>
+<a th:href="@{/}">на Главную страницу</a>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>Tasks</title>
+</head>
+
+<a th:href="@{/tasks/add}">Добавить задачу</a>
+<form method="GET" th:action="@{/tasks/show/}">
+    <input placeholder="Поиск по id" th:name="id" type="text">
+    <input type="submit"/>
+</form>
+<form method="GET" th:action="@{/tasks/show/}">
+    <select th:name="status">
+        <option th:each="status : ${taskStatuses}" th:text="${status.getStatusName()}"
+                th:value="${status.getStatusName()}"></option>
+    </select><input type="submit"/>
+</form>
+
+<h1>Список задач:</h1>
+<table>
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Описание</td>
+        <td>Статус</td>
+    </tr>
+    </thead>
+    <tbody>
+    <!--/*@thymesVar id="tasks" type="java.util.List<com.gb.dz14.entities.Task>"*/-->
+    <tr th:each="t : ${tasks}">
+        <td th:text="${t.getId()}"></td>
+        <td th:text="${t.getName()}"></td>
+        <td th:text="${t.getDescription()}"></td>
+        <td th:text="${t.getStatus()}"></td>
+        <td><a th:href="@{'/tasks/' + ${t.getId()}}">Подробнее</a></td>
+    </tr>
+    </tbody>
+</table>
+<a th:href="@{/}">на Главную страницу</a>
+</body>
+</html>
