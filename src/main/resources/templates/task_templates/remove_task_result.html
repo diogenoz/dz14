@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h1>Task info</h1>
+<br>
+<span th:text="'Задача: ' + ${deletedTaskId} + ' удалена'"></span>
+<br>
+<a th:href="@{/}">на Главную страницу</a>
+</body>
+</html>

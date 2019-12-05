@@ -1,0 +1,21 @@
+<%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h1>Add task result</h1>
+<br>
+<span th:text="'Ид задачи: ' + ${task.getId()}"></span>
+<br>
+<span th:text="'Название задачи: ' + ${task.getName()}"></span>
+<br>
+<span th:text="'Описание: ' + ${task.getDescription()}"></span>
+<br>
+<span th:text="'Статус: ' + ${task.getStatus().getStatusName()}"></span>
+<br>
+<a th:href="@{/tasks/show}">к списку задач</a>
+<br>
+<a th:href="@{/}">на Главную страницу</a>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>Spring MVC GeekApp</title>
+</head>
+
+<a th:href="@{/employees/add}">Добавить пользователя</a>
+<h1>Список employees:</h1>
+<table>
+    <thead>
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Age</td>
+    </tr>
+    </thead>
+    <tbody>
+    <!--/*@thymesVar id="employees" type="java.util.List<com.gb.dz14.entities.Employee>"*/-->
+    <tr th:each="e : ${employees}">
+        <td th:text="${e.getId()}"></td>
+        <td th:text="${e.getName()}"></td>
+        <td th:text="${e.getAge()}"></td>
+    </tr>
+    </tbody>
+</table>
+<a th:href="@{/}">на Главную страницу</a>
+</body>
+</html>

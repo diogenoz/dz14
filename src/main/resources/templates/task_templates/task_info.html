@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<h1>Task info</h1>
+<br>
+<span th:text="'Ид задачи: ' + ${task.getId()}"></span>
+<br>
+<span th:text="'Название задачи: ' + ${task.getName()}"></span>
+<br>
+<span th:text="'Описание: ' + ${task.getDescription()}"></span>
+<br>
+<span th:text="'Статус: ' + ${task.getStatus()}"></span>
+<br>
+
+<a th:href="@{'/tasks/remove/'+${task.getId()}}">Удалить задачу</a>
+<br>
+<a th:href="@{/}">на Главную страницу</a>
+</body>
+</html>

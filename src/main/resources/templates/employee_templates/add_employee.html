@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add employee</title>
+</head>
+<body>
+<h1>Add employee</h1>
+
+<form method="POST" th:action="@{/employees/add/}" th:object="${employee}">
+    <input class="form-control" th:field="*{id}" type="hidden">
+    <input name="name" placeholder="Введите имя сотрудника" th:field="*{name}" type="text"/><br/>
+    <input name="age" placeholder="Введите возраст" th:field="*{age}" type="text"/><br/>
+    <input name="Добавить" type="submit"/>
+</form>
+
+<br>
+<a th:href="@{/employees/show}">на Главную страницу</a>
+</body>
+</html>
