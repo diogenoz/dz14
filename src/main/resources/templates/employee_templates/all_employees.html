@@ -18,7 +18,7 @@
     </tr>
     </thead>
     <tbody>
-    <!--/*@thymesVar id="employees" type="java.util.List<com.geekbrains.entities.Employee>"*/-->
+    <!--/*@thymesVar id="employees" type="java.util.List<com.gb.dz14.entities.Employee>"*/-->
     <tr th:each="e : ${employees}">
         <td th:text="${e.getId()}"></td>
         <td th:text="${e.getName()}"></td>

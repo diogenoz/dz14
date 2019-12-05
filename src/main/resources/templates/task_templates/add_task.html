@@ -8,7 +8,8 @@
 
 <form method="POST" th:action="@{/tasks/add/}" th:object="${task}">
     <input class="form-control" th:field="*{id}" type="hidden">
-    <input name="name" placeholder="Введите имя задачи" th:field="*{name}" type="text"/><br/>
+    <input name="name" placeholder="Введите имя задачи" th:field="*{name}" type="text"/>
+    <br/>
     <select th:name="ownerId">
         <option th:each="emp : ${employees}" th:selected="${task.getOwner().getId() == emp.getId()}"
                 th:text="${emp.name}" th:value="${emp.getId()}"></option>
